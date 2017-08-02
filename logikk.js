@@ -1,17 +1,8 @@
-//$(window).onload()
-//$(document).ready(function()
-// variables-teams**
-//selected words**
-// onclick key functions
-// random clues
-// reset
-//
-
 $(document).ready(function(){
 
 
-var bank = ["smile", "happy", "bear", "phone", "honey",
-       "bird", "wizard", "browns", "newyork", "charlotte", "monkey"]
+var bank = ["students", "falcons", "cat", "phone", "panthers",
+       "bears", ]
 var selectedWord = " ";
 var lettersInWord = [];
 var numBlanks = 0;
@@ -54,7 +45,6 @@ function checkLetters (letter) {
         if(selectedWord[i] === letter) {
             isLetterinWord = true;
             break; 
-            
         }
     }
 
@@ -66,7 +56,7 @@ function checkLetters (letter) {
                 myCounter ++;
             }
         }
-       console.log("letter INN");
+        alert("good job");
         console.log(myCounter + " " + selectedWord.length);
         if (myCounter == selectedWord.length) {
              wins++;
@@ -129,7 +119,7 @@ document.onkeyup = function(event) {
     //roundComplete();
         
 
-    console.log(letterGuessed);
+    console.log(letterGuessed)
     
 }
 
