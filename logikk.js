@@ -1,4 +1,5 @@
-$(document).ready(function(){
+// document.addEventListener('DOMContentLoaded', function()
+window.onload = function() {
 
 
 var bank = ["students", "falcons", "cat", "phone", "panthers",
@@ -11,10 +12,11 @@ var wrongLetters = [];
 var wins = 0;
 var losses = 0;
 var guessesLeft = 10;
+// $("#wordUp")
+startGame: 
 
-//startGame: 
-function startGame() {
-    $("#wordUp").innerHtml = "____________";
+function startGame() { 
+   document.getElementById("wordUp").innerHtml = "____________";
     selectedWord = bank[Math.floor(Math.random() * bank.length)];
     console.log(selectedWord);
     lettersInWord = selectedWord.split("");
@@ -76,17 +78,20 @@ function checkLetters (letter) {
         }
     }    
     //console.log(blanksAndSuccesses);
-    $("#wordUp").html(blanksAndSuccesses);
+    // .html(blanksAndSuccesses);
+    document.getElementById("wordUp")
 
+    // $("#wordUp")
 }
 
 function roundComplete(){
     console.log("win count" + wins + "| loss count:" + losses + "| Guesses left" + guessesLeft);
 
 }
-
-$("#userGuess").innerHTML = guessesLeft;
-$("#wordUp").innerHTML = blanksAndSuccesses.join("  ");
+// $("#userGuess")
+  document.getElementById("userGuess").innerHTML=guessesLeft;
+// $("#wordUp")
+document.getElementById("wordUp").innerHTML=blanksAndSuccesses.join("  ");
 
 console.log(lettersInWord.toString());
 console.log(blanksAndSuccesses.toString());
@@ -124,4 +129,4 @@ document.onkeyup = function(event) {
 }
 
 
-});
+};
