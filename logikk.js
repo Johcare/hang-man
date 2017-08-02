@@ -1,9 +1,21 @@
-// document.addEventListener('DOMContentLoaded', function()
-window.onload = function() {
+//$(window).onload()
+//$(document).ready(function()
+// variables-teams**
+//selected words**
+// onclick key functions
+// random clues
+// reset
+//
+
+$(document).ready(function(){
 
 
-var bank = ["students", "falcons", "cat", "phone", "panthers",
-       "bears", ]
+var bank = ["cardinals", "falcons", "ravens", "bills", "panthers",
+       "bears", "bengals", "browns", "cowboys", "broncos", "lions",
+       "packers", "texans", "colts", "jaguars", "chiefs", "chargers",
+       "rams", "dolphins", "vikings", "saints", "giants",
+       "jets", "raiders","eagles", "steelers", "49ers","seahawks", "buccaneers",
+       "titans", "redskins"]
 var selectedWord = " ";
 var lettersInWord = [];
 var numBlanks = 0;
@@ -12,11 +24,10 @@ var wrongLetters = [];
 var wins = 0;
 var losses = 0;
 var guessesLeft = 10;
-// $("#wordUp")
-startGame: 
 
-function startGame() { 
-   document.getElementById("wordUp").innerHtml = "____________";
+//startGame: 
+function startGame() {
+    $("#wordUp").innerHtml = "____________";
     selectedWord = bank[Math.floor(Math.random() * bank.length)];
     console.log(selectedWord);
     lettersInWord = selectedWord.split("");
@@ -58,7 +69,7 @@ function checkLetters (letter) {
                 myCounter ++;
             }
         }
-        alert("good job");
+        console.log("hey");
         console.log(myCounter + " " + selectedWord.length);
         if (myCounter == selectedWord.length) {
              wins++;
@@ -78,20 +89,17 @@ function checkLetters (letter) {
         }
     }    
     //console.log(blanksAndSuccesses);
-    // .html(blanksAndSuccesses);
-    document.getElementById("wordUp")
+    $("#wordUp").html(blanksAndSuccesses);
 
-    // $("#wordUp")
 }
 
 function roundComplete(){
     console.log("win count" + wins + "| loss count:" + losses + "| Guesses left" + guessesLeft);
 
 }
-// $("#userGuess")
-  document.getElementById("userGuess").innerHTML=guessesLeft;
-// $("#wordUp")
-document.getElementById("wordUp").innerHTML=blanksAndSuccesses.join("  ");
+
+$("#userGuess").innerHTML = guessesLeft;
+$("#wordUp").innerHTML = blanksAndSuccesses.join("  ");
 
 console.log(lettersInWord.toString());
 console.log(blanksAndSuccesses.toString());
@@ -129,4 +137,4 @@ document.onkeyup = function(event) {
 }
 
 
-};
+});
